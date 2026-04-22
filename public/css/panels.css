@@ -1,0 +1,353 @@
+/* ── Panel Shared ──────────────────────────────────────────── */
+.panel-head {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  background: var(--panel);
+  z-index: 1;
+}
+.panel-head-icon { color: var(--accent); display: flex; }
+.panel-head-title {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 13px;
+  flex: 1;
+}
+.panel-head-action {
+  color: var(--muted);
+  font-size: 11px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: var(--font-ui);
+}
+.panel-head-action:hover { color: var(--accent); }
+
+/* ── Row ──────────────────────────────────────────────────── */
+.panel-row {
+  padding: 9px 14px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  border-bottom: 1px solid #1a1a28;
+  transition: background 0.12s;
+}
+.panel-row:hover { background: var(--item); }
+.panel-row-left { flex-shrink: 0; font-size: 16px; }
+.panel-row-body { flex: 1; overflow: hidden; }
+.panel-row-main {
+  color: var(--text);
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.panel-row-sub {
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.panel-row-right { flex-shrink: 0; }
+.panel-row-time { color: var(--muted); font-size: 11px; white-space: nowrap; }
+
+/* ── History ──────────────────────────────────────────────── */
+.history-empty {
+  padding: 32px 14px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* ── Downloads ────────────────────────────────────────────── */
+.dl-check { color: var(--vpn); }
+
+/* ── Bookmarks ────────────────────────────────────────────── */
+.bm-folder-label {
+  padding: 10px 16px 4px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
+/* ── Passwords ────────────────────────────────────────────── */
+.pw-search-wrap {
+  padding: 12px 14px 8px;
+  position: sticky;
+  top: 42px;
+  background: var(--panel);
+  z-index: 1;
+}
+.pw-search {
+  position: relative;
+}
+.pw-search input {
+  width: 100%;
+  padding: 7px 10px 7px 30px;
+  border-radius: 8px;
+  background: var(--item);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 13px;
+  font-family: var(--font-ui);
+  outline: none;
+}
+.pw-search input:focus { border-color: var(--accent); }
+.pw-search-icon {
+  position: absolute;
+  left: 10px; top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+}
+.pw-list { padding: 0 14px 14px; }
+.pw-card {
+  background: var(--item);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 8px;
+  border: 1px solid var(--border);
+}
+.pw-card-row { display: flex; align-items: center; gap: 8px; }
+.pw-card-icon { font-size: 18px; }
+.pw-card-info { flex: 1; }
+.pw-card-site { color: var(--text); font-size: 13px; font-weight: 600; }
+.pw-card-user { color: var(--muted); font-size: 11px; }
+.pw-card-btns { display: flex; gap: 4px; }
+.pw-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  transition: color 0.12s, background 0.12s;
+}
+.pw-btn:hover { color: var(--accent); background: var(--accent-dim); }
+.pw-copy-btn {
+  border: 1px solid var(--border);
+  color: var(--accent);
+}
+.pw-reveal {
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 2px;
+  background: var(--bg);
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+.pw-add-btn {
+  width: 100%;
+  padding: 9px;
+  border-radius: 8px;
+  border: 1px dashed var(--border);
+  background: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 13px;
+  font-family: var(--font-ui);
+  margin-top: 4px;
+  transition: border-color 0.15s, background 0.15s;
+}
+.pw-add-btn:hover { border-color: var(--accent); background: var(--accent-dim); }
+
+/* ── VPN Panel ────────────────────────────────────────────── */
+.vpn-wrap { padding: 16px 14px; }
+.vpn-card {
+  background: var(--item);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 14px;
+  border: 1px solid var(--border);
+}
+.vpn-orb {
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(85,86,122,0.18);
+  border: 3px solid var(--muted);
+  color: var(--muted);
+  transition: all 0.3s;
+  font-size: 28px;
+}
+.vpn-orb.on {
+  background: rgba(0,200,83,0.12);
+  border-color: var(--vpn);
+  color: var(--vpn);
+  box-shadow: 0 0 20px rgba(0,200,83,0.2);
+}
+.vpn-status-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.vpn-status-label.on { color: var(--vpn); }
+.vpn-status-sub { color: var(--muted); font-size: 12px; margin-top: 2px; }
+.vpn-connect-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: var(--vpn);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: var(--font-ui);
+  cursor: pointer;
+  margin-bottom: 14px;
+  transition: background 0.3s;
+}
+.vpn-connect-btn.on { background: var(--red); }
+.vpn-server-label {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.vpn-server-list {
+  background: var(--item);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.vpn-server-item {
+  padding: 9px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  font-size: 13px;
+  transition: background 0.15s;
+}
+.vpn-server-item:last-child { border-bottom: none; }
+.vpn-server-item:hover { background: var(--accent-dim); }
+.vpn-server-item.selected { background: var(--accent-dim); color: var(--accent); }
+.vpn-server-check { color: var(--vpn); font-size: 12px; }
+
+/* ── Settings Panel ───────────────────────────────────────── */
+.settings-wrap { padding: 12px 14px; }
+.settings-card {
+  background: var(--item);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+.settings-card-info { flex: 1; }
+.settings-card-label { color: var(--text); font-size: 13px; font-weight: 600; }
+.settings-card-desc { color: var(--muted); font-size: 11px; }
+.settings-card-full {
+  background: var(--item);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  border: 1px solid var(--border);
+}
+.settings-card-full .settings-card-label { margin-bottom: 10px; }
+.uv-info-row { display: flex; gap: 6px; }
+.uv-info-box {
+  flex: 1;
+  background: var(--bg);
+  border-radius: 7px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+}
+.uv-info-box-label {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  margin-bottom: 2px;
+}
+.uv-info-box-val { color: var(--text); font-size: 11px; }
+.uv-info-box-val.sw-on { color: var(--vpn); }
+.uv-info-box-val.sw-off { color: var(--muted); }
+.zoom-row { display: flex; align-items: center; gap: 8px; }
+.zoom-btn {
+  width: 28px; height: 28px;
+  border-radius: 6px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.zoom-btn:hover { background: var(--accent-dim); }
+.zoom-val { color: var(--accent); font-size: 14px; font-weight: 700; min-width: 42px; text-align: center; }
+.zoom-reset {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 11px;
+  cursor: pointer;
+  font-family: var(--font-ui);
+}
+.zoom-reset:hover { color: var(--accent); }
+.settings-nav-item {
+  padding: 10px 14px;
+  background: var(--item);
+  border-radius: 10px;
+  margin-bottom: 6px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 13px;
+  transition: background 0.12s;
+}
+.settings-nav-item:hover { background: var(--accent-dim); }
+.settings-nav-item span { flex: 1; }
+.settings-nav-arrow { color: var(--muted); }
+
+/* ── Toggle ───────────────────────────────────────────────── */
+.toggle {
+  width: 42px; height: 24px;
+  border-radius: 12px;
+  background: var(--border);
+  cursor: pointer;
+  position: relative;
+  transition: background 0.25s;
+  flex-shrink: 0;
+  border: none;
+}
+.toggle.on { background: var(--accent); }
+.toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: white;
+  transition: left 0.25s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.toggle.on::after { left: 21px; }
